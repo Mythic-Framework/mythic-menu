@@ -17,26 +17,26 @@ export default () => {
         },
         palette: {
 			primary: {
-				main: '#00c9b1',
-				light: '#4ddece',
-				dark: '#008c7c',
-				contrastText: '#0a0a0a',
+			main: '#208692',
+			light: '#4db8c4',
+			dark: '#0e5a62',
+			contrastText: '#ffffff',
 			},
 			secondary: {
-				main: '#141414',
-				light: '#1c1c1c',
-				dark: '#0f0f0f',
-				contrastText: '#ffffff',
+			main: '#121025',
+			light: '#1c1a30',
+			dark: '#0a0914',
+			contrastText: '#ffffff',
 			},
 			error: {
-				main: '#e53935',
-				light: '#ff6b6b',
-				dark: '#b71c1c',
+			main: '#6e1616',
+			light: '#a13434',
+			dark: '#430b0b',
 			},
 			success: {
-				main: '#00c9b1',
-				light: '#4ddece',
-				dark: '#007a6d',
+			main: '#208692',
+			light: '#4db8c4',
+			dark: '#0e5a62',
 			},
 			warning: {
 				main: '#f09348',
@@ -68,38 +68,114 @@ export default () => {
             MuiTooltip: {
                 styleOverrides: {
                     tooltip: {
-                        fontSize: 16,
-                        backgroundColor: '#111315',
-                        border: '1px solid rgba(255, 255, 255, 0.23)',
-                        boxShadow: `0 0 10px #000`,
+                        fontSize: 13,
+                        backgroundColor: 'rgba(10, 9, 20, 0.97)',
+                        border: '1px solid rgba(32,134,146,0.35)',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.6)',
+                        borderRadius: 4,
+                        letterSpacing: '0.03em',
                     },
                 },
             },
             MuiPaper: {
                 styleOverrides: {
                     root: {
-                        background: '#111315',
+                        background: 'rgba(18, 16, 37, 0.97)',
+                        backgroundImage: 'none',
+                        border: '1px solid rgba(32,134,146,0.2)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
+                    },
+                },
+            },
+            MuiMenuItem: {
+                styleOverrides: {
+                    root: {
+                        fontFamily: "'Rajdhani', sans-serif",
+                        fontSize: 13,
+                        color: 'rgba(255,255,255,0.8)',
+                        '&:hover': { background: 'rgba(32,134,146,0.1)' },
+                        '&.Mui-selected': {
+                            background: 'rgba(32,134,146,0.2)',
+                            color: '#208692',
+                            '&:hover': { background: 'rgba(32,134,146,0.25)' },
+                        },
+                    },
+                },
+            },
+            MuiInput: {
+                styleOverrides: {
+                    root: {
+                        '&:before': {
+                            borderBottomColor: 'rgba(32,134,146,0.3)',
+                        },
+                        '&:hover:not(.Mui-disabled):before': {
+                            borderBottomColor: 'rgba(32,134,146,0.6)',
+                        },
+                        '&:after': {
+                            borderBottomColor: '#208692',
+                        },
+                    },
+                    input: {
+                        color: '#ffffff',
+                        fontSize: 13,
+                    },
+                },
+            },
+            MuiInputLabel: {
+                styleOverrides: {
+                    root: {
+                        color: 'rgba(32,134,146,0.7)',
+                        fontSize: 11,
+                        fontWeight: 600,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        '&.Mui-focused': {
+                            color: '#208692',
+                        },
+                    },
+                },
+            },
+            MuiSlider: {
+                styleOverrides: {
+                    root: {
+                        color: '#208692',
+                    },
+                    thumb: {
+                        '&:hover, &.Mui-focusVisible': {
+                            boxShadow: '0 0 0 8px rgba(32,134,146,0.16)',
+                        },
+                    },
+                    track: {
+                        background: 'linear-gradient(90deg, #0e5a62, #208692)',
+                        border: 'none',
+                    },
+                    rail: {
+                        backgroundColor: 'rgba(32,134,146,0.2)',
+                    },
+                },
+            },
+            MuiCheckbox: {
+                styleOverrides: {
+                    root: {
+                        color: 'rgba(32,134,146,0.5)',
+                        '&.Mui-checked': {
+                            color: '#208692',
+                        },
                     },
                 },
             },
             MuiCssBaseline: {
                 styleOverrides: {
                     body: {
-                        '.fade-enter': {
-                            opacity: 0,
-                        },
-                        '.fade-exit': {
-                            opacity: 1,
-                        },
-                        '.fade-enter-active': {
-                            opacity: 1,
-                        },
-                        '.fade-exit-active': {
-                            opacity: 0,
-                        },
-                        '.fade-enter-active, .fade-exit-active': {
-                            transition: 'opacity 500ms',
-                        },
+                        '*::-webkit-scrollbar': { width: '4px' },
+                        '*::-webkit-scrollbar-track': { background: 'transparent' },
+                        '*::-webkit-scrollbar-thumb': { background: 'rgba(32,134,146,0.3)', borderRadius: '2px' },
+                        '*::-webkit-scrollbar-thumb:hover': { background: 'rgba(32,134,146,0.55)' },
+                        '.fade-enter': { opacity: 0 },
+                        '.fade-exit': { opacity: 1 },
+                        '.fade-enter-active': { opacity: 1 },
+                        '.fade-exit-active': { opacity: 0 },
+                        '.fade-enter-active, .fade-exit-active': { transition: 'opacity 500ms' },
                     },
                 },
             },

@@ -12,8 +12,8 @@ import { withStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `1px solid ${theme.palette.primary.main}25`,
-        background: theme.palette.secondary.light,
+        border: `1px solid rgba(32,134,146,0.2)`,
+        background: 'rgba(32,134,146,0.04)',
         color: theme.palette.text.main,
         fontSize: 13,
         minHeight: 80,
@@ -21,17 +21,17 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         userSelect: 'none',
         padding: '10px 16px 6px',
-        marginBottom: 5,
-        borderRadius: 5,
+        marginBottom: 4,
+        borderRadius: 3,
     },
     label: {
         display: 'block',
         width: '100%',
-        fontSize: 12,
-        fontWeight: 500,
-        letterSpacing: '0.04em',
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.2em',
         textTransform: 'uppercase',
-        color: theme.palette.text.alt,
+        color: 'rgba(32,134,146,0.7)',
         marginBottom: 2,
     },
     slider: {

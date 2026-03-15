@@ -7,16 +7,16 @@ import { ChevronLeft, ChevronRight } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `1px solid ${theme.palette.primary.main}25`,
-        background: theme.palette.secondary.light,
+        border: `1px solid rgba(32,134,146,0.2)`,
+        background: 'rgba(32,134,146,0.04)',
         color: theme.palette.text.main,
         fontSize: 13,
         minHeight: 80,
         width: '100%',
         textAlign: 'center',
         userSelect: 'none',
-        marginBottom: 5,
-        borderRadius: 5,
+        marginBottom: 4,
+        borderRadius: 3,
     },
     action: {
         height: '100%',
@@ -26,20 +26,20 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         '&:hover': {
             '& button': {
-                color: theme.palette.primary.main,
+                color: '#208692',
             },
         },
     },
     actionBtn: {
-        color: `${theme.palette.text.main}60`,
-        transition: 'color ease-in 0.15s',
+        color: `rgba(255,255,255,0.3)`,
+        transition: 'color 0.18s ease',
         padding: 4,
     },
     textField: {
         width: 28,
         '& input': {
             textAlign: 'center',
-            color: theme.palette.primary.main,
+            color: '#4db8c4',
             fontWeight: 700,
             fontSize: 15,
         },
@@ -48,8 +48,8 @@ const useStyles = makeStyles(theme => ({
         },
     },
     maxLabel: {
-        color: `${theme.palette.text.main}50`,
-        fontSize: 13,
+        color: `rgba(255,255,255,0.35)`,
+        fontSize: 12,
     },
     wrapper: {
         display: 'grid',
@@ -58,11 +58,11 @@ const useStyles = makeStyles(theme => ({
         gridTemplateRows: '40px 40px',
     },
     itemLabel: {
-        fontSize: 12,
-        fontWeight: 500,
-        letterSpacing: '0.04em',
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.2em',
         textTransform: 'uppercase',
-        color: theme.palette.text.alt,
+        color: 'rgba(32,134,146,0.7)',
     },
 }));
 

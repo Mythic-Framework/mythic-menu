@@ -8,20 +8,31 @@ import Nui from '../../util/Nui';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `1px solid ${theme.palette.primary.main}25`,
-        background: theme.palette.secondary.light,
+        border: `1px solid rgba(32,134,146,0.2)`,
+        background: 'rgba(32,134,146,0.04)',
         color: theme.palette.text.main,
         fontSize: 13,
         minHeight: 72,
         width: '100%',
         textAlign: 'left',
         userSelect: 'none',
-        padding: '8px 14px',
-        marginBottom: 5,
-        borderRadius: 5,
+        padding: '10px 14px 8px',
+        marginBottom: 4,
+        borderRadius: 3,
+        transition: 'border-color 0.2s ease, background 0.2s ease',
+        '&:focus-within': {
+            borderColor: 'rgba(32,134,146,0.55)',
+            background: 'rgba(32,134,146,0.07)',
+        },
     },
     input: {
         width: '100%',
+        '& .MuiInput-underline:before': { borderBottomColor: 'rgba(32,134,146,0.3)' },
+        '& .MuiInput-underline:hover:not(.Mui-disabled):before': { borderBottomColor: 'rgba(32,134,146,0.6)' },
+        '& .MuiInput-underline:after': { borderBottomColor: '#208692' },
+        '& .MuiInputLabel-root': { color: 'rgba(32,134,146,0.65)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' },
+        '& .MuiInputLabel-root.Mui-focused': { color: '#208692' },
+        '& .MuiInputBase-input': { color: '#ffffff', fontSize: 13 },
     },
 }));
 
