@@ -9,31 +9,37 @@ import Nui from '../../util/Nui';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
         color: theme.palette.text.main,
         fontSize: 13,
-        height: 42,
+        fontWeight: 500,
+        height: 40,
         width: '100%',
         userSelect: 'none',
         textAlign: 'center',
-        transition: 'filter ease-in 0.15s',
+        transition: 'all ease-in 0.15s',
         marginBottom: 5,
-        borderRadius: 3,
+        borderRadius: 5,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
         '&:hover': {
-            background: theme.palette.secondary.light,
-            filter: 'brightness(0.7)',
+            background: `${theme.palette.primary.main}15`,
+            borderColor: `${theme.palette.primary.main}60`,
         },
-    },
-    left: {
-        display: 'inline-block',
-        width: '10%',
-        marginTop: 3,
     },
     icon: {
         width: '0.75em',
         height: '100%',
-        fontSize: '1.25rem',
+        fontSize: '1.1rem',
+        color: theme.palette.primary.main,
+        transition: 'color ease-in 0.15s',
+    },
+    iconChecked: {
+        width: '0.75em',
+        height: '100%',
+        fontSize: '1.1rem',
+        color: theme.palette.primary.main,
     },
     right: {
         width: '90%',
@@ -57,10 +63,10 @@ export default ({ data }) => {
 
     return (
         <Button className={classes.div} onClick={onClick}>
-            <Grid container>
+            <Grid container alignItems="center">
                 <Grid item xs={2}>
                     {selected ? (
-                        <CheckBox className={classes.icon} />
+                        <CheckBox className={classes.iconChecked} />
                     ) : (
                         <CheckBoxOutlineBlank className={classes.icon} />
                     )}

@@ -12,22 +12,27 @@ import { withStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
         color: theme.palette.text.main,
         fontSize: 13,
-        height: 84,
+        minHeight: 80,
         width: '100%',
         textAlign: 'center',
         userSelect: 'none',
-        transition: 'filter ease-in 0.15s',
-        padding: '10px 20px',
+        padding: '10px 16px 6px',
         marginBottom: 5,
-        borderRadius: 3,
+        borderRadius: 5,
     },
     label: {
         display: 'block',
         width: '100%',
+        fontSize: 12,
+        fontWeight: 500,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: theme.palette.text.alt,
+        marginBottom: 2,
     },
     slider: {
         display: 'block',
@@ -36,9 +41,10 @@ const useStyles = makeStyles(theme => ({
     },
     saveContainer: {
         textAlign: 'right',
-        color: '#38b58fab',
+        color: `${theme.palette.primary.main}90`,
+        cursor: 'pointer',
         '&:hover': {
-            color: '#38b58f59',
+            color: theme.palette.primary.main,
         },
     },
     icon: {
@@ -119,7 +125,7 @@ export default ({ data }) => {
             <Grid container>
                 <Grid item xs={2}></Grid>
                 <Grid item xs={8}>
-                    <span>{data.label}</span>
+                    <span className={classes.label}>{data.label}</span>
                 </Grid>
                 <Grid
                     item

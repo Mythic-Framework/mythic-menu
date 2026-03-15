@@ -5,20 +5,24 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
         color: theme.palette.text.main,
         fontSize: 13,
-        height: 42,
+        fontWeight: 500,
+        height: 40,
         width: '100%',
         textAlign: 'center',
         userSelect: 'none',
-        transition: 'filter ease-in 0.15s',
+        transition: 'all ease-in 0.15s',
         marginBottom: 5,
-        borderRadius: 3,
+        borderRadius: 5,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
         '&:hover': {
-            background: theme.palette.secondary.light,
-            filter: 'brightness(0.7)',
+            background: `${theme.palette.primary.main}15`,
+            borderColor: `${theme.palette.primary.main}60`,
+            color: theme.palette.primary.light,
         },
     },
     left: {
@@ -26,12 +30,18 @@ const useStyles = makeStyles(theme => ({
         width: '50%',
         textAlign: 'left',
         paddingLeft: 10,
+        fontSize: 11,
+        opacity: 0.6,
+        color: theme.palette.text.alt,
     },
     right: {
         display: 'inline-block',
         width: '50%',
         textAlign: 'right',
         paddingRight: 10,
+        fontSize: 11,
+        opacity: 0.6,
+        color: theme.palette.primary.main,
     },
 }));
 

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { Button as MButton, Alert } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-
-import CancelIcon from '@material-ui/icons/Cancel';
+import CloseIcon from '@material-ui/icons/Close';
 import Nui from '../../util/Nui';
 
 import {
@@ -22,86 +21,74 @@ import {
     Text,
 } from '../MenuItems';
 
-import Logo from '../../assets/logo.png';
-
 const useStyles = makeStyles(theme => ({
     wrapper: {
         background: theme.palette.secondary.dark,
+        border: `1px solid ${theme.palette.primary.main}30`,
+        boxShadow: `0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px ${theme.palette.primary.main}15`,
         maxHeight: 800,
-        width: '20%',
+        width: '22%',
         position: 'absolute',
         top: '5%',
         left: '1%',
-        margin: 'auto',
-        textAlign: 'center',
-        fontSize: 30,
+        borderRadius: 8,
         color: theme.palette.text.main,
         zIndex: 1000,
-        padding: 20,
         overflow: 'hidden',
     },
     menuHeader: {
-        color: theme.palette.text.main,
-        position: 'relative',
-        padding: 14,
-        width: 'fit-content',
-        marginBottom: 20,
-        fontSize: 16,
-        letterSpacing: 1,
-        textTransform: 'uppercase',
-        whiteSpace: 'nowrap',
-        maxWidth: '90%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '14px 16px',
+        background: theme.palette.secondary.dark,
+        borderBottom: `1px solid ${theme.palette.primary.main}25`,
     },
-    menuButton: {
-        marginBottom: 10,
+    menuTitle: {
+        fontSize: 14,
+        fontWeight: 700,
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        color: theme.palette.text.main,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
     },
     closeButton: {
-        position: 'absolute',
-        top: 25,
-        right: 15,
-        color: theme.palette.primary.main,
-        padding: 5,
-        background: `transparent`,
-        minWidth: 32,
+        color: theme.palette.text.alt,
+        width: 28,
+        height: 28,
+        minWidth: 28,
+        padding: 0,
+        borderRadius: 4,
+        background: 'transparent',
         boxShadow: 'none',
+        transition: 'color ease-in 0.15s, background ease-in 0.15s',
         '&:hover': {
-            color: theme.palette.primary.main,
-            background: `transparent`,
+            color: '#ff5555',
+            background: 'rgba(255,85,85,0.12)',
             boxShadow: 'none',
-            '& svg': {
-                filter: 'brightness(0.6)',
-                transition: 'filter ease-in 0.15s',
-            },
         },
     },
     buttons: {
         overflowY: 'auto',
         overflowX: 'hidden',
-        maxHeight: 695,
+        maxHeight: 700,
+        padding: '8px 10px 10px',
         display: 'block',
         '&::-webkit-scrollbar': {
-            width: 6,
+            width: 4,
         },
         '&::-webkit-scrollbar-thumb': {
-            background: '#131317',
+            background: `${theme.palette.primary.main}40`,
+            borderRadius: 2,
         },
         '&::-webkit-scrollbar-thumb:hover': {
             background: theme.palette.primary.main,
         },
         '&::-webkit-scrollbar-track': {
-            background: theme.palette.secondary.main,
+            background: 'transparent',
         },
-    },
-    branding: {
-        position: 'absolute',
-        opacity: 0.05,
-        top: -100,
-        right: 0,
-        left: 0,
-        margin: 'auto',
-        width: '100%',
-        maxWidth: 300,
-        zIndex: -1,
     },
 }));
 
@@ -245,31 +232,19 @@ export default props => {
 
     return (
         <div className={classes.wrapper}>
-            <MButton
-                className={classes.closeButton}
-                variant="contained"
-                color="primary"
-                onClick={onClick}
-            >
-                <CancelIcon />
-            </MButton>
-            <img className={classes.branding} src={Logo} />
             <div className={classes.menuHeader}>
-                <div
-                    style={{
-                        maxWidth: '100%',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                    }}
-                >
-                    {Boolean(menu.label) ? menu.label : 'Mythic RP'}
+                <div className={classes.menuTitle}>
+                    {Boolean(menu.label) ? menu.label : 'Menu'}
                 </div>
+                <MButton className={classes.closeButton} onClick={onClick}>
+                    <CloseIcon style={{ fontSize: 16 }} />
+                </MButton>
             </div>
             <div className={classes.buttons}>
                 {elements.length > 0 ? (
                     elements
                 ) : (
-                    <Alert variant="filled" color="error">
+                    <Alert variant="outlined" severity="info" style={{ margin: 8 }}>
                         Menu Has No Content
                     </Alert>
                 )}

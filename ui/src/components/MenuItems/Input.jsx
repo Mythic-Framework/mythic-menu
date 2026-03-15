@@ -8,18 +8,17 @@ import Nui from '../../util/Nui';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
         color: theme.palette.text.main,
         fontSize: 13,
-        minHeight: 84,
+        minHeight: 72,
         width: '100%',
-        textAlign: 'center',
+        textAlign: 'left',
         userSelect: 'none',
-        transition: 'filter ease-in 0.15s',
-        padding: '10px 20px',
+        padding: '8px 14px',
         marginBottom: 5,
-        borderRadius: 3,
+        borderRadius: 5,
     },
     input: {
         width: '100%',

@@ -1,5 +1,8 @@
 export const initialState = {
     hidden: true,
+
+    // DEV PREVIEW - uncomment to preview in browser
+    // hidden: false,
 };
 
 const appReducer = (state = initialState, action) => {

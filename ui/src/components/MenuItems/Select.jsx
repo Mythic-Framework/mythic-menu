@@ -5,22 +5,17 @@ import Nui from '../../util/Nui';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
-        color: '#fff',
+        color: theme.palette.text.main,
         fontSize: 13,
-        height: 84,
+        minHeight: 72,
         width: '100%',
-        textAlign: 'center',
-        textDecoration: 'none',
-        whiteSpace: 'nowrap',
-        verticalAlign: 'middle',
+        textAlign: 'left',
         userSelect: 'none',
-        transition: 'filter ease-in 0.15s',
-        lineHeight: '38px',
         marginBottom: 5,
-        borderRadius: 3,
-        padding: '10px 20px',
+        borderRadius: 5,
+        padding: '8px 14px',
     },
     item: {
         width: '100%',

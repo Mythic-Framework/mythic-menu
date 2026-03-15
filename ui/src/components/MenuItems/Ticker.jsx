@@ -7,59 +7,62 @@ import { ChevronLeft, ChevronRight } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `2px solid ${theme.palette.border.divider}`,
+        border: `1px solid ${theme.palette.primary.main}25`,
         background: theme.palette.secondary.light,
         color: theme.palette.text.main,
         fontSize: 13,
-        height: 84,
+        minHeight: 80,
         width: '100%',
         textAlign: 'center',
         userSelect: 'none',
-        transition: 'filter ease-in 0.15s',
         marginBottom: 5,
-        lineHeight: '38px',
-        verticalAlign: 'middle',
-        borderRadius: 3,
-    },
-    slider: {
-        display: 'block',
-        position: 'relative',
-        top: '25%',
+        borderRadius: 5,
     },
     action: {
-        height: 86,
+        height: '100%',
         position: 'relative',
-        lineHeight: '100px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         '&:hover': {
-            filter: 'brightness(0.6)',
-            transition: 'filter ease-in 0.15s',
+            '& button': {
+                color: theme.palette.primary.main,
+            },
         },
     },
     actionBtn: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        margin: 'auto',
-        height: 'fit-content',
-        width: 'fit-content',
+        color: `${theme.palette.text.main}60`,
+        transition: 'color ease-in 0.15s',
+        padding: 4,
     },
     textField: {
-        width: 25,
+        width: 28,
         '& input': {
             textAlign: 'center',
             color: theme.palette.primary.main,
+            fontWeight: 700,
+            fontSize: 15,
         },
         '& input::-webkit-clear-button, & input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
             display: 'none',
         },
+    },
+    maxLabel: {
+        color: `${theme.palette.text.main}50`,
+        fontSize: 13,
     },
     wrapper: {
         display: 'grid',
         gridGap: 0,
         gridTemplateColumns: '20% 60% 20%',
         gridTemplateRows: '40px 40px',
+    },
+    itemLabel: {
+        fontSize: 12,
+        fontWeight: 500,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: theme.palette.text.alt,
     },
 }));
 
@@ -141,7 +144,7 @@ const Ticker = props => {
     return (
         <div className={cssClass} style={style}>
             <div className={classes.wrapper}>
-                <div style={{ gridColumn: 2, gridRow: 1 }}>
+                <div style={{ gridColumn: 2, gridRow: 1 }} className={classes.itemLabel}>
                     {props.data.label}
                 </div>
                 <div
@@ -165,8 +168,8 @@ const Ticker = props => {
                             max: props.data.options.max,
                             step: 1,
                         }}
-                    />{' '}
-                    / {props.data.options.max}
+                    />
+                    <span className={classes.maxLabel}>{' '}/ {props.data.options.max}</span>
                 </div>
                 <div
                     className={classes.action}

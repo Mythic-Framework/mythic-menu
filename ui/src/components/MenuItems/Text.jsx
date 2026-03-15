@@ -11,13 +11,21 @@ const useStyles = makeStyles(theme => ({
         'url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap")',
     defaultStyle: {
         textAlign: 'left',
-        fontSize: 12,
+        fontSize: 13,
         fontWeight: 'normal',
+        color: theme.palette.text.alt,
+        marginBottom: 4,
     },
     heading: {
-        fontSize: 22,
-        padding: '15px 0',
-        borderBottom: `1px solid ${theme.palette.primary.main}`,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        color: theme.palette.primary.main,
+        padding: '10px 2px 6px',
+        borderBottom: `1px solid ${theme.palette.primary.main}25`,
+        marginBottom: 6,
+        opacity: 0.9,
     },
     textSmall: {
         fontSize: 8,
@@ -59,7 +67,7 @@ const useStyles = makeStyles(theme => ({
         color: theme.palette.warning.main,
     },
     colorSuccess: {
-        color: theme.palette.success.light,
+        color: theme.palette.primary.light,
     },
 }));
 
