@@ -41,10 +41,10 @@ const useStyles = makeStyles(theme => ({
     },
     saveContainer: {
         textAlign: 'right',
-        color: `${theme.palette.primary.main}90`,
+        color: `rgba(32,134,146,0.5)`,
         cursor: 'pointer',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: '#208692',
         },
     },
     icon: {
@@ -66,7 +66,7 @@ function ValueLabelComponent(props) {
 }
 
 const XSlider = withStyles(theme => ({
-    color: theme.palette.primary.main,
+    color: '#208692',
     height: 8,
     '& .MuiSlider-thumb': {
         height: 24,

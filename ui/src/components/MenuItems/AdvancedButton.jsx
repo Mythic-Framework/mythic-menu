@@ -5,24 +5,25 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     div: {
-        border: `1px solid ${theme.palette.primary.main}25`,
-        background: theme.palette.secondary.light,
-        color: theme.palette.text.main,
-        fontSize: 13,
-        fontWeight: 500,
-        height: 40,
+        border: `1px solid rgba(32,134,146,0.2)`,
+        background: 'rgba(32,134,146,0.05)',
+        color: 'rgba(255,255,255,0.85)',
+        fontSize: 11,
+        fontWeight: 700,
+        height: 38,
         width: '100%',
         textAlign: 'center',
         userSelect: 'none',
-        transition: 'all ease-in 0.15s',
-        marginBottom: 5,
-        borderRadius: 5,
-        letterSpacing: '0.04em',
+        transition: 'all 0.18s ease',
+        marginBottom: 4,
+        borderRadius: 3,
+        letterSpacing: '0.12em',
         textTransform: 'uppercase',
         '&:hover': {
-            background: `${theme.palette.primary.main}15`,
-            borderColor: `${theme.palette.primary.main}60`,
-            color: theme.palette.primary.light,
+            background: `rgba(32,134,146,0.15)`,
+            borderColor: `rgba(32,134,146,0.55)`,
+            color: '#4db8c4',
+            boxShadow: '0 0 10px rgba(32,134,146,0.15)',
         },
     },
     left: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: 10,
         fontSize: 11,
         opacity: 0.6,
-        color: theme.palette.text.alt,
+        color: 'rgba(255,255,255,0.6)',
     },
     right: {
         display: 'inline-block',
@@ -40,8 +41,8 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         paddingRight: 10,
         fontSize: 11,
-        opacity: 0.6,
-        color: theme.palette.primary.main,
+        opacity: 0.8,
+        color: '#4db8c4',
     },
 }));
 
